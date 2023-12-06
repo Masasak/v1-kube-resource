@@ -28,6 +28,7 @@ jobs:
             - name: Add Public Helm repos
               run: |
                 helm repo add argo https://argoproj.github.io/argo-helm
+                helm repo add eks https://aws.github.io/eks-charts
             
             - name: Helm build
               run: |
