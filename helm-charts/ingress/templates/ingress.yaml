@@ -10,7 +10,7 @@ metadata:
     kubernetes.io/ingress.class: alb
   finalizers:
   - ingress.k8s.aws/resources
-  name: SnapVibe-ingress
+  name: snapvibe-ingress
   namespace: default
 spec:
   rules:
@@ -20,6 +20,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: headless-to-ArgocdService
+            name: headless-to-argocdservice
             port:
               number: 80
