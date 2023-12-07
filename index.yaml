@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   argocd:
   - apiVersion: v2
-    created: "2023-12-06T22:58:11.426578059Z"
+    created: "2023-12-07T00:22:51.531018103Z"
     dependencies:
     - name: argo-cd
       repository: https://argoproj.github.io/argo-helm
@@ -16,7 +16,7 @@ entries:
     version: 0.1.0
   aws-loadbalancer-controller:
   - apiVersion: v2
-    created: "2023-12-06T22:58:11.427760442Z"
+    created: "2023-12-07T00:22:51.532195788Z"
     dependencies:
     - name: aws-load-balancer-controller
       repository: https://aws.github.io/eks-charts
@@ -30,7 +30,16 @@ entries:
     version: 0.1.0
   snapvibe-ingress:
   - apiVersion: v2
-    created: "2023-12-06T22:58:11.427874154Z"
+    created: "2023-12-07T00:22:51.5324062Z"
+    description: SnapVibe root ingress helm chart
+    digest: 528801ed3b4d7fd5a777292b6438601fdc4b16ae6caac5a31ce795dfc8862456
+    name: snapvibe-ingress
+    type: application
+    urls:
+    - snapvibe-ingress-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    created: "2023-12-07T00:22:51.532303288Z"
     description: SnapVibe ingress helm chart
     digest: 3135e82db3640631d5668c6b36431ba169cb93b69c4d6659812076f7bfcb836a
     name: snapvibe-ingress
@@ -38,4 +47,4 @@ entries:
     urls:
     - snapvibe-ingress-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-06T22:58:11.417046035Z"
+generated: "2023-12-07T00:22:51.521438832Z"
