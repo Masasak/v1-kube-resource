@@ -3,7 +3,7 @@ aws-load-balancer-controller:
     create: true
     annotations: 
       eks.amazonaws.com/role-arn: arn:aws:iam::250832144271:role/load-balancer-controller
-    name: aws-loadbalancer-controller
+    name: aws-load-balancer-controller
   
   clusterName: SnapVibe-cluster
   region: ap-northeast-2
