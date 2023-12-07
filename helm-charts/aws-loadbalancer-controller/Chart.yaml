@@ -1,8 +1,8 @@
 apiVersion: v2
-name: aws-loadbalancer-controller
-description: aws-loadbalancer-controller helm chart
+name: aws-load-balancer-controller
+description: aws-load-balancer-controller helm chart
 type: application
-version: 0.1.1
+version: 0.1.2
 dependencies:
   - name: aws-load-balancer-controller
     version: 1.6.2
