@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   argocd:
   - apiVersion: v2
-    created: "2023-12-07T09:15:54.981957448Z"
+    created: "2023-12-07T10:48:55.65997924Z"
     dependencies:
     - name: argo-cd
       repository: https://argoproj.github.io/argo-helm
@@ -16,7 +16,7 @@ entries:
     version: 0.1.0
   aws-load-balancer-controller:
   - apiVersion: v2
-    created: "2023-12-07T09:15:54.984967362Z"
+    created: "2023-12-07T10:48:55.662335519Z"
     dependencies:
     - name: aws-load-balancer-controller
       repository: https://aws.github.io/eks-charts
@@ -29,7 +29,7 @@ entries:
     - aws-load-balancer-controller-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v2
-    created: "2023-12-07T09:15:54.983327259Z"
+    created: "2023-12-07T10:48:55.661139075Z"
     dependencies:
     - name: aws-load-balancer-controller
       repository: https://aws.github.io/eks-charts
@@ -43,7 +43,7 @@ entries:
     version: 0.1.2
   aws-loadbalancer-controller:
   - apiVersion: v2
-    created: "2023-12-07T09:15:54.989065932Z"
+    created: "2023-12-07T10:48:55.665952118Z"
     dependencies:
     - name: aws-load-balancer-controller
       repository: https://aws.github.io/eks-charts
@@ -56,7 +56,7 @@ entries:
     - aws-loadbalancer-controller-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
-    created: "2023-12-07T09:15:54.98633602Z"
+    created: "2023-12-07T10:48:55.663657465Z"
     dependencies:
     - name: aws-load-balancer-controller
       repository: https://aws.github.io/eks-charts
@@ -70,7 +70,16 @@ entries:
     version: 0.1.0
   snapvibe-ingress:
   - apiVersion: v2
-    created: "2023-12-07T09:15:54.989980063Z"
+    created: "2023-12-07T10:48:55.666692995Z"
+    description: SnapVibe root ingress helm chart
+    digest: 26bc51bd6a851af65a9708dccd71407e9b3b9b9d11d6b411b41fbfb818270250
+    name: snapvibe-ingress
+    type: application
+    urls:
+    - snapvibe-ingress-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    created: "2023-12-07T10:48:55.666604861Z"
     description: SnapVibe root ingress helm chart
     digest: e5b8a59f5d9127d924113cbe2dad62e6f1dfa14114c5ae95b4d55f69bc9f9746
     name: snapvibe-ingress
@@ -79,7 +88,7 @@ entries:
     - snapvibe-ingress-0.1.6.tgz
     version: 0.1.6
   - apiVersion: v2
-    created: "2023-12-07T09:15:54.989866672Z"
+    created: "2023-12-07T10:48:55.666517569Z"
     description: SnapVibe root ingress helm chart
     digest: 019e9721d7e71250f4563318fc08bb6de7d56c6a2c8202bebdbd7713b3eeabe6
     name: snapvibe-ingress
@@ -88,7 +97,7 @@ entries:
     - snapvibe-ingress-0.1.5.tgz
     version: 0.1.5
   - apiVersion: v2
-    created: "2023-12-07T09:15:54.989745016Z"
+    created: "2023-12-07T10:48:55.666429676Z"
     description: SnapVibe root ingress helm chart
     digest: d742f483f3f72a08bd2568de286d3a2d68e1d988684a7b798d44351ebb3815ef
     name: snapvibe-ingress
@@ -97,7 +106,7 @@ entries:
     - snapvibe-ingress-0.1.4.tgz
     version: 0.1.4
   - apiVersion: v2
-    created: "2023-12-07T09:15:54.989633929Z"
+    created: "2023-12-07T10:48:55.666342764Z"
     description: SnapVibe root ingress helm chart
     digest: 024fe7a2ffa2cd03c9d0fb872cddbf171bac444c67861f306a2f6aa7ec8af582
     name: snapvibe-ingress
@@ -106,7 +115,7 @@ entries:
     - snapvibe-ingress-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v2
-    created: "2023-12-07T09:15:54.989499108Z"
+    created: "2023-12-07T10:48:55.66625429Z"
     description: SnapVibe root ingress helm chart
     digest: 2bc22f8f84c39cc84d84f0fdc89d56b80f10e4166ccc41481d58c950b1448f88
     name: snapvibe-ingress
@@ -115,7 +124,7 @@ entries:
     - snapvibe-ingress-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v2
-    created: "2023-12-07T09:15:54.989334151Z"
+    created: "2023-12-07T10:48:55.666164072Z"
     description: SnapVibe root ingress helm chart
     digest: 528801ed3b4d7fd5a777292b6438601fdc4b16ae6caac5a31ce795dfc8862456
     name: snapvibe-ingress
@@ -124,7 +133,7 @@ entries:
     - snapvibe-ingress-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
-    created: "2023-12-07T09:15:54.989211222Z"
+    created: "2023-12-07T10:48:55.666069797Z"
     description: SnapVibe ingress helm chart
     digest: 3135e82db3640631d5668c6b36431ba169cb93b69c4d6659812076f7bfcb836a
     name: snapvibe-ingress
@@ -132,4 +141,4 @@ entries:
     urls:
     - snapvibe-ingress-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-07T09:15:54.969527465Z"
+generated: "2023-12-07T10:48:55.650123364Z"
