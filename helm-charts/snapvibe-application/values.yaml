@@ -1,7 +1,7 @@
 projects:
   - name: snapvibe-application
     applications:
-      - name: snapvibe
+      - name: snapvibe-services
         namespace: argocd
         source:
           path: app-of-apps
