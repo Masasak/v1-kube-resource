@@ -6,8 +6,6 @@ metadata:
     alb.ingress.kubernetes.io/healthcheck-protocol: HTTP
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP":80}]'
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/ip-address-type: ipv4
-    alb.ingress.kubernetes.io/subnets: subnet-0afd15b967c974c02, subnet-01ba19b2aaa5c2ad9
     alb.ingress.kubernetes.io/target-type: ip
     kubernetes.io/ingress.class: alb
 
