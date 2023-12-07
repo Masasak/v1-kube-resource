@@ -12,7 +12,7 @@ metadata:
   finalizers:
   - ingress.k8s.aws/resources
   name: snapvibe-ingress
-  namespace: default
+  namespace: argocd
 spec:
   rules:
   - http:
@@ -21,6 +21,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: headless-to-argocdservice
+            name: argocd-server
             port:
               number: 80
