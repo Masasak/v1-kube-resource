@@ -1,0 +1,5 @@
+apiVersion: v2
+name: ingress
+description: snapvibe root ingress
+type: application
+version: 0.1.0
