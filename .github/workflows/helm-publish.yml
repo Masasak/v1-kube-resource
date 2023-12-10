@@ -52,6 +52,6 @@ jobs:
                 branch: helm-repository
                 skip_checkout: true
                 repository: .
-                commit_user_name: Masasak
-                commit_user_email: team.Masasak@gamil.com
-                commit_author: Masasak <team.Masasak@gamil.com>
+                commit_user_name: Masasak-Admin
+                commit_user_email: team.Masasak@gmail.com
+                commit_author: Masasak-Admin <team.Masasak@gmail.com>
