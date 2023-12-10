@@ -10,3 +10,12 @@ projects:
           automated:
             prune: true
             selfHeal: true
+      - name: snapvibe-ingress
+        namespace: argocd
+        source:
+          path: apps/ingress
+          repoURL: https://github.com/Masasak/v1-kube-resource.git
+        syncPolicy:
+          automated:
+            prune: true
+            selfHeal: true
