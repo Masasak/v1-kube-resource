@@ -22,16 +22,16 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .name }}
+  name: {{ .Values.name }}
   namespace: argocd
 spec:
   destination:
-    namespace: {{ .namespace }}
+    namespace: {{ .Values.namespace }}
     server: https://kubernetes.default.svc
   project: {{ $projectName }}
   source:
-    path: {{ .source.path }}
-    repoURL: {{ .source.repoURL }}
+    path: {{ .Values.source.path }}
+    repoURL: {{ .Values.source.repoURL }}
     targetRevision: HEAD
   syncPolicy:
     automated:

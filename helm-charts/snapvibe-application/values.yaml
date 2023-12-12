@@ -4,7 +4,7 @@ projects:
       - name: snapvibe-services
         namespace: argocd
         source:
-          path: app-of-apps
+          path: apps
           repoURL: https://github.com/Masasak/v1-gitops-manifest.git
         syncPolicy:
           automated:
