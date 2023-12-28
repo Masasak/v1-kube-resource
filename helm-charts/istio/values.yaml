@@ -19,7 +19,6 @@ istioOperator:
   serviceAnnotations:
     service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
     service.beta.kubernetes.io/aws-load-balancer-ssl-ports: "443"
-    service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: "*"
     service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
     service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
     service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
@@ -34,12 +33,3 @@ waitForResourcesTimeout: 300s
 enableCRDTemplates: false
 revision: ""
 deploymentHistory: 0
-
-nodeSelector:
-  eks.amazonaws.com/capacityType: ON_DEMAND
-
-tolerations:
-- effect: "PreferNoSchedule"
-  key: "snapvibe/service"
-  operator: "Equal"
-  value: "true"

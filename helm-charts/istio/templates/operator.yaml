@@ -10,12 +10,6 @@ spec:
   components:
     pilot:
       k8s:
-        {{- with .Values.nodeSelector }}
-        nodeSelector: {{ toYaml . | nindent 10 }}
-        {{- end }}
-        {{- with .Values.tolerations }}
-        tolerations: {{ toYaml . | nindent 10 }}
-        {{- end }}
         hpaSpec:
           minReplicas: 1
           maxReplicas: 3
