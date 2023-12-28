@@ -14,7 +14,7 @@ spec:
         number: 80
         protocol: HTTP
       tls:
-        httpsRedirect: true
+        httpsRedirect: false
     {{- range .Values.ingressGateway.servers }}
     - hosts: {{ .hosts | toYaml | nindent 6 }}
       port:

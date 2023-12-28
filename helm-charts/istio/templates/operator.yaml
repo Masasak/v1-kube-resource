@@ -31,12 +31,6 @@ spec:
           hpaSpec:
             minReplicas: {{ .Values.istioOperator.hpaSpec.minReplicas }}
             maxReplicas: {{ .Values.istioOperator.hpaSpec.maxReplicas }}
-          {{- with .Values.nodeSelector }}
-          nodeSelector: {{ toYaml . | nindent 12 }}
-          {{- end }}
-          {{- with .Values.tolerations }}
-          tolerations: {{ toYaml . | nindent 12 }}
-          {{- end }}
           service:
             type: LoadBalancer
             ports:
@@ -58,32 +52,9 @@ spec:
           hpaSpec:  
             minReplicas: {{ .Values.istioOperator.hpaSpec.minReplicas }}
             maxReplicas: {{ .Values.istioOperator.hpaSpec.maxReplicas }}
-          {{- with .Values.nodeSelector }}
-          nodeSelector: {{ toYaml . | nindent 12 }}
-          {{- end }}
-          {{- with .Values.tolerations }}
-          tolerations: {{ toYaml . | nindent 12 }}
-          {{- end }}
-          {{- with .Values.istioOperator.serviceAnnotations }}
-          serviceAnnotations: {{ toYaml . | nindent 12 }}
-          {{- end }}
   values:
     sidecarInjectorWebhook:
       rewriteAppHTTPProbe: true
     gateways:
       istio-ingressgateway:
         type: ClusterIP
-    global:
-      {{- with .Values.nodeSelector }}
-      defaultNodeSelector: {{ toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.tolerations }}
-      defaultTolerations: {{ toYaml . | nindent 8 }}
-      {{- end }}
-  unvalidatedValues:
-    {{- with .Values.nodeSelector }}
-    nodeSelector: {{ toYaml . | nindent 6 }}
-    {{- end }}
-    {{- with .Values.tolerations }}
-    tolerations: {{ toYaml . | nindent 6 }}
-    {{- end }}
