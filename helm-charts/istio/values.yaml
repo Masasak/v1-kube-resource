@@ -33,7 +33,10 @@ waitForResourcesTimeout: 300s
 enableCRDTemplates: false
 revision: ""
 deploymentHistory: 0
-  
+
+nodeSelector:
+  eks.amazonaws.com/capacityType: ON_DEMAND
+
 tolerations:
 - effect: "PreferNoSchedule"
   key: "snapvibe/service"
