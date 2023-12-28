@@ -30,6 +30,7 @@ jobs:
               run: |
                 helm repo add argo https://argoproj.github.io/argo-helm
                 helm repo add eks https://aws.github.io/eks-charts
+                helm repo add cert-manager https://charts.jetstack.io
             
             - name: Helm build
               run: |
