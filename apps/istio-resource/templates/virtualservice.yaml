@@ -1,0 +1,19 @@
+{{- range .Values.virtualServices }}
+---
+kind: VirtualService
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: {{ .name }}
+  namespace: istio-system
+spec:
+  gateways:
+    - "snapvibe-ingressgateway"
+  hosts:
+    - {{ .host }}
+  http:
+  - route:
+    - destination:
+        host: {{ .destination.host }}
+        port:
+          number: {{ .destination.port }}
+{{- end }}

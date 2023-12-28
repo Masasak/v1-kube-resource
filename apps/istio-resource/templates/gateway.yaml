@@ -1,0 +1,52 @@
+kind: Gateway
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: snapvibe-ingressgateway
+  namespace: istio-system
+spec:
+  selector:
+    app: istio-ingressgateway
+  servers:
+    - hosts:
+        - '*'
+      port:
+        name: http
+        number: 80
+        protocol: HTTP
+      tls:
+        httpsRedirect: true
+    {{- range .Values.ingressGateway.servers }}
+    - hosts: {{ .hosts | toYaml | nindent 6 }}
+      port:
+        name: {{ .port.name }}
+        number: {{ .port.number }}
+        protocol: {{ .port.protocol }}
+      {{- if .tls }}
+      tls:
+        mode: {{ .tls.mode }}
+        credentialName: {{ .tls.credentialName }}
+      {{- end }}
+    {{- end }}
+---
+kind: Gateway
+apiVersion: networking.istio.io/v1alpha3
+metadata:
+  name: snapvibe-egressgateway
+  namespace: istio-system
+spec:
+  selector:
+    app: istio-egressgateway
+  servers:
+    {{- range .Values.egressGateway.servers }}
+    - hosts:
+        - {{ .host }}
+      port:
+        name: {{ .name }}-{{ .protocol }}
+        number: {{ .port }}
+        protocol: {{ .protocol }}
+      {{- if .tls }}
+      tls:
+        mode: {{ .tls.mode }}
+        credentialName: {{ .tls.credentialName }}
+      {{- end }}
+    {{- end }}

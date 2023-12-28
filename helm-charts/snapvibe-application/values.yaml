@@ -10,3 +10,14 @@ projects:
           automated:
             prune: true
             selfHeal: true
+  - name: snapvibe-resources
+    applications:
+      - name: istio-resource
+        namespace: argocd
+        source:
+          path: apps/istio-resource
+          repoURL: https://github.com/Masasak/v1-kube-resource.git
+        syncPolicy:
+          automated:
+            prune: false
+            selfHeal: true

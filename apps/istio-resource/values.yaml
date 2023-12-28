@@ -1,0 +1,18 @@
+ingressGateway:
+  servers:
+  - hosts:
+      - '*.ottokeng.site'
+    port:
+      name: http-snapvibe
+      number: 80
+      protocol: HTTP
+
+egressGateway:
+  servers:
+
+virtualServices:
+  - name: argocd-server
+    host: argocd.ottokeng.site
+    destination:
+      host: argocd-server.argocd.svc.cluster.local
+      port: 80
