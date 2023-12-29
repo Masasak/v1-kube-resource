@@ -5,7 +5,7 @@ metadata:
   namespace: istio-system
 spec:
   selector:
-    app: istio-ingressgateway
+    Istio: istio-ingressgateway
   servers:
     - hosts:
         - '*'
