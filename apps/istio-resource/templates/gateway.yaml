@@ -35,7 +35,7 @@ metadata:
   namespace: istio-system
 spec:
   selector:
-    app: istio-egressgateway
+    Istio: istio-egressgateway
   servers:
     {{- range .Values.egressGateway.servers }}
     - hosts:

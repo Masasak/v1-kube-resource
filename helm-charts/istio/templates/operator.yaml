@@ -18,6 +18,7 @@ spec:
         namespace: istio-system
         enabled: true
         label:
+          Istio: istio-ingressgateway
           service.istio.io/canonical-name: istio-ingressgateway
         k8s:
           service:
@@ -41,6 +42,7 @@ spec:
         namespace: istio-system
         enabled: true
         label:
+          Istio: istio-egressgateway
           service.istio.io/canonical-name: istio-egressgateway
         k8s:
           hpaSpec:  
