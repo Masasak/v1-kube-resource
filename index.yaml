@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   argocd:
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.680533482Z"
+    created: "2023-12-30T09:02:11.875600019Z"
     dependencies:
     - name: argo-cd
       repository: https://argoproj.github.io/argo-helm
@@ -15,7 +15,7 @@ entries:
     - argocd-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.670732192Z"
+    created: "2023-12-30T09:02:11.864418299Z"
     dependencies:
     - name: argo-cd
       repository: https://argoproj.github.io/argo-helm
@@ -29,7 +29,7 @@ entries:
     version: 0.1.0
   aws-load-balancer-controller:
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.681755367Z"
+    created: "2023-12-30T09:02:11.876733481Z"
     dependencies:
     - name: aws-load-balancer-controller
       repository: https://aws.github.io/eks-charts
@@ -44,7 +44,7 @@ entries:
   cert-manager:
   - apiVersion: v1
     appVersion: v1.13.3
-    created: "2023-12-29T03:05:45.68459669Z"
+    created: "2023-12-30T09:02:11.879913125Z"
     description: A Helm chart for cert-manager
     digest: 72fb2fc0ff2462d63a1c794600b71c9329bbc1b762ef2ad55b2df5b03999b509
     home: https://github.com/cert-manager/cert-manager
@@ -55,7 +55,7 @@ entries:
     version: v1.13.3
   ingress:
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.684911105Z"
+    created: "2023-12-30T09:02:11.880256985Z"
     description: snapvibe root ingress
     digest: 2a6e378f46d21255e0b0ccc74cabdbda69dd6b809d712d82a77a30807907510e
     name: ingress
@@ -64,7 +64,7 @@ entries:
     - ingress-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.68480659Z"
+    created: "2023-12-30T09:02:11.880156758Z"
     description: snapvibe root ingress
     digest: 47e659d99447c4986adc7b6c728c6ae9719508f9a1c0d539da127dd9450adf28
     name: ingress
@@ -73,7 +73,7 @@ entries:
     - ingress-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.684708087Z"
+    created: "2023-12-30T09:02:11.88003954Z"
     description: snapvibe root ingress
     digest: a5c02f184f74c42aa68e641df6182a658554193489acb5a3d9eb5efe87157543
     name: ingress
@@ -84,7 +84,17 @@ entries:
   istio:
   - apiVersion: v2
     appVersion: 1.18.1
-    created: "2023-12-29T03:05:45.694733495Z"
+    created: "2023-12-30T09:02:11.890261494Z"
+    description: SnapVibe Istio Operator
+    digest: 33b896d658485812ce4a887fcb76e779187189bee234de8934c781f2cb2f1de9
+    name: istio
+    type: application
+    urls:
+    - istio-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    appVersion: 1.18.1
+    created: "2023-12-30T09:02:11.888903224Z"
     description: SnapVibe Istio Operator
     digest: c57a5bd77b1ddaf11a204e6eb85b099d25cd865a1653b4f006f1735c9b708f5d
     name: istio
@@ -94,7 +104,7 @@ entries:
     version: 0.1.7
   - apiVersion: v2
     appVersion: 1.18.1
-    created: "2023-12-29T03:05:45.693411583Z"
+    created: "2023-12-30T09:02:11.888051447Z"
     description: SnapVibe Istio Operator
     digest: 3f6007233fc71c10d03d156cd81eff1567e0446f270ae24fe68527389086a8f2
     name: istio
@@ -104,7 +114,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 1.18.1
-    created: "2023-12-29T03:05:45.692477794Z"
+    created: "2023-12-30T09:02:11.887218906Z"
     description: SnapVibe Istio Operator
     digest: d2539f0ca930e5ec75a3c7585a053e63935a69edfc671f56072c96d3f043b7d0
     name: istio
@@ -114,7 +124,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 1.18.1
-    created: "2023-12-29T03:05:45.691574792Z"
+    created: "2023-12-30T09:02:11.88608292Z"
     description: SnapVibe Istio Operator
     digest: 760338248daa93ef5d415b9a577071950c6a7907b78c99eafebbc5f628acd5df
     name: istio
@@ -124,7 +134,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 1.18.1
-    created: "2023-12-29T03:05:45.689262215Z"
+    created: "2023-12-30T09:02:11.884558856Z"
     description: SnapVibe Istio Operator
     digest: f8ae0a54fd4622ec74549afb11cbedbba9c079a1935f4a33843a203579f96a7f
     name: istio
@@ -133,7 +143,7 @@ entries:
     - istio-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.68839526Z"
+    created: "2023-12-30T09:02:11.883673667Z"
     description: SnapVibe Istio Operator
     digest: 95af172d65a44270a111150e22d244d6b614f157ee97e214ccca6072a8bb10b7
     name: istio
@@ -142,7 +152,7 @@ entries:
     - istio-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.687522325Z"
+    created: "2023-12-30T09:02:11.882828683Z"
     description: SnapVibe Istio Operator
     digest: e01a905c29acf359b3db482d6ee40a1ed2431fc61f87ac0613a60b139d2e5388
     name: istio
@@ -151,7 +161,7 @@ entries:
     - istio-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.686605607Z"
+    created: "2023-12-30T09:02:11.881088464Z"
     description: SnapVibe Istio Operator
     digest: 3e8ca666b8d9c5641a6393bc4e5cbc7a5dc15e146261d4773d02ccd10355d7da
     name: istio
@@ -161,7 +171,7 @@ entries:
     version: 0.1.0
   snapvibe-application:
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.696767603Z"
+    created: "2023-12-30T09:02:11.892947691Z"
     description: SnapVibe argocd application chart
     digest: d2fd0af282a9d54af29dad040741cd98f615a64aa1f866ea90c791be86e34ac0
     name: snapvibe-application
@@ -170,7 +180,7 @@ entries:
     - snapvibe-application-0.1.18.tgz
     version: 0.1.18
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.696591696Z"
+    created: "2023-12-30T09:02:11.892745294Z"
     description: SnapVibe argocd application chart
     digest: e17f2b534af7f1213b766880d034668900779a2e6ef943b21ee88cc2b3f7d518
     name: snapvibe-application
@@ -179,7 +189,7 @@ entries:
     - snapvibe-application-0.1.17.tgz
     version: 0.1.17
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.696421208Z"
+    created: "2023-12-30T09:02:11.892570077Z"
     description: SnapVibe argocd application chart
     digest: e3d3fdee641f496d9443bf9e1dba8325d7c8ac19251a85c5d91eddbe2a745b00
     name: snapvibe-application
@@ -188,7 +198,7 @@ entries:
     - snapvibe-application-0.1.16.tgz
     version: 0.1.16
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.696278132Z"
+    created: "2023-12-30T09:02:11.892444704Z"
     description: SnapVibe argocd application chart
     digest: b1a2cea789fe73f980eafdcf7fb830a59e15bbdfddf4fe1f02271241b0fac787
     name: snapvibe-application
@@ -197,7 +207,7 @@ entries:
     - snapvibe-application-0.1.15.tgz
     version: 0.1.15
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.696141387Z"
+    created: "2023-12-30T09:02:11.892320633Z"
     description: SnapVibe argocd application chart
     digest: cb02867e46d4d61ad55ed2075f27fba8f8907c6176a61dcfd8101ae698f5a301
     name: snapvibe-application
@@ -206,7 +216,7 @@ entries:
     - snapvibe-application-0.1.14.tgz
     version: 0.1.14
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.696001907Z"
+    created: "2023-12-30T09:02:11.89219023Z"
     description: SnapVibe argocd application chart
     digest: d081dc666c14f026293054ee1e9f33ab03710af167d3f4c3e6a1d1154d1f510c
     name: snapvibe-application
@@ -215,7 +225,7 @@ entries:
     - snapvibe-application-0.1.13.tgz
     version: 0.1.13
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.695861275Z"
+    created: "2023-12-30T09:02:11.892059085Z"
     description: SnapVibe argocd application chart
     digest: 2241a876d54c67b986b915e3b0a903269e18ae5d6c4a45c5451606006bb8f0ce
     name: snapvibe-application
@@ -224,7 +234,7 @@ entries:
     - snapvibe-application-0.1.12.tgz
     version: 0.1.12
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.695720353Z"
+    created: "2023-12-30T09:02:11.891924525Z"
     description: SnapVibe argocd application chart
     digest: 18758f4c373452f1d2b9afe00e19ad20130486bab0668d78ddcd1af441cb3009
     name: snapvibe-application
@@ -233,7 +243,7 @@ entries:
     - snapvibe-application-0.1.11.tgz
     version: 0.1.11
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.69557411Z"
+    created: "2023-12-30T09:02:11.891772291Z"
     description: SnapVibe argocd application chart
     digest: 423b5fd3b5c50032d31bcda4f9997b1d7824cd02846e2a72f4f8c8b7944c9516
     name: snapvibe-application
@@ -242,7 +252,7 @@ entries:
     - snapvibe-application-0.1.10.tgz
     version: 0.1.10
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.69795233Z"
+    created: "2023-12-30T09:02:11.894088346Z"
     description: SnapVibe argocd application chart
     digest: b063cf16678fb25d5ba2646b9e2def522e8a5a9c11892858c83f69f2bdd27637
     name: snapvibe-application
@@ -251,7 +261,7 @@ entries:
     - snapvibe-application-0.1.9.tgz
     version: 0.1.9
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.69781267Z"
+    created: "2023-12-30T09:02:11.893937896Z"
     description: SnapVibe argocd application chart
     digest: 5db7af6b9832ed1e377464318e100a7c595aa00a61cc2ec9775d0eb688c45ca9
     name: snapvibe-application
@@ -260,7 +270,7 @@ entries:
     - snapvibe-application-0.1.8.tgz
     version: 0.1.8
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.697650037Z"
+    created: "2023-12-30T09:02:11.893786494Z"
     description: SnapVibe argocd application chart
     digest: 8ffcfeda5aba29696ec83f8f5d1a6f7ec041ae5bf0fe9a04e6ee6c467fc6c396
     name: snapvibe-application
@@ -269,7 +279,7 @@ entries:
     - snapvibe-application-0.1.7.tgz
     version: 0.1.7
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.697501991Z"
+    created: "2023-12-30T09:02:11.893642626Z"
     description: SnapVibe argocd application chart
     digest: 41daf3817052c42eeb0f12c1da44f0137cf86e9f1e76c0ff2835bc9c7c44d1e1
     name: snapvibe-application
@@ -278,7 +288,7 @@ entries:
     - snapvibe-application-0.1.6.tgz
     version: 0.1.6
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.697316115Z"
+    created: "2023-12-30T09:02:11.893496834Z"
     description: SnapVibe argocd application chart
     digest: fb089c9e50470490ca2f9903b9dcff34d7ad588abbb34da7861afb4e8ae5e6a2
     name: snapvibe-application
@@ -287,7 +297,7 @@ entries:
     - snapvibe-application-0.1.5.tgz
     version: 0.1.5
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.697180893Z"
+    created: "2023-12-30T09:02:11.893359398Z"
     description: SnapVibe argocd application chart
     digest: 311e4b39dee4553a98c9af61992312bf072be68fb18c1fc85d72f33675b54927
     name: snapvibe-application
@@ -296,7 +306,7 @@ entries:
     - snapvibe-application-0.1.4.tgz
     version: 0.1.4
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.697043928Z"
+    created: "2023-12-30T09:02:11.893224908Z"
     description: SnapVibe argocd application chart
     digest: a23dc7a196257afedbb850f1eca3aa9643321655b792a68c114fc2f1fe726e52
     name: snapvibe-application
@@ -305,7 +315,7 @@ entries:
     - snapvibe-application-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.696907364Z"
+    created: "2023-12-30T09:02:11.893090607Z"
     description: SnapVibe argocd application chart
     digest: e6e03f35b1aff0ff03118099b567ec8fd730cc62062b4551458767cfcba716d2
     name: snapvibe-application
@@ -314,7 +324,7 @@ entries:
     - snapvibe-application-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.695416507Z"
+    created: "2023-12-30T09:02:11.891425986Z"
     description: SnapVibe argocd application chart
     digest: 9f0e2ca9ba268db9724ed7469577067d8ba9c283ca7c4f8efa3c2e75f34e0992
     name: snapvibe-application
@@ -323,7 +333,7 @@ entries:
     - snapvibe-application-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v2
-    created: "2023-12-29T03:05:45.695075532Z"
+    created: "2023-12-30T09:02:11.890430479Z"
     description: SnapVibe argocd application chart
     digest: a3880c713c1ee4441aa59efcf158f0413392a0cbed1a6ae57c7f9233d59070b7
     name: snapvibe-application
@@ -331,4 +341,4 @@ entries:
     urls:
     - snapvibe-application-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-29T03:05:45.660745508Z"
+generated: "2023-12-30T09:02:11.854140708Z"
