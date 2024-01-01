@@ -30,3 +30,6 @@ waitForResourcesTimeout: 300s
 enableCRDTemplates: false
 revision: ""
 deploymentHistory: 0
+
+nodeSelector:
+  istio: enabled
