@@ -5,7 +5,7 @@ metadata:
   namespace: istio-system
 spec:
   selector:
-    Istio: istio-ingressgateway
+    istio: istio-ingressgateway
   servers:
     - hosts:
         - '*'
@@ -35,7 +35,7 @@ metadata:
   namespace: istio-system
 spec:
   selector:
-    Istio: istio-egressgateway
+    istio: istio-egressgateway
   servers:
     {{- range .Values.egressGateway.servers }}
     - hosts:

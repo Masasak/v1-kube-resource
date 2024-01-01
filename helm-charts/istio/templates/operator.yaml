@@ -10,6 +10,8 @@ spec:
   components:
     pilot:
       k8s:
+        nodeSelector:
+          istio: enabled
         hpaSpec:
           minReplicas: 1
           maxReplicas: 3
@@ -18,7 +20,7 @@ spec:
         namespace: istio-system
         enabled: true
         label:
-          Istio: istio-ingressgateway
+          istio: istio-ingressgateway
           service.istio.io/canonical-name: istio-ingressgateway
         k8s:
           service:
@@ -26,6 +28,8 @@ spec:
           hpaSpec:
             minReplicas: {{ .Values.istioOperator.hpaSpec.minReplicas }}
             maxReplicas: {{ .Values.istioOperator.hpaSpec.maxReplicas }}
+          nodeSelector:
+            istio: enabled
           service:
             type: LoadBalancer
             ports:
@@ -42,12 +46,14 @@ spec:
         namespace: istio-system
         enabled: true
         label:
-          Istio: istio-egressgateway
+          istio: istio-egressgateway
           service.istio.io/canonical-name: istio-egressgateway
         k8s:
           hpaSpec:  
             minReplicas: {{ .Values.istioOperator.hpaSpec.minReplicas }}
             maxReplicas: {{ .Values.istioOperator.hpaSpec.maxReplicas }}
+          nodeSelector:
+            istio: enabled
   values:
     sidecarInjectorWebhook:
       rewriteAppHTTPProbe: true
