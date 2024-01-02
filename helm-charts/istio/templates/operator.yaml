@@ -12,7 +12,8 @@ spec:
         hpaSpec:
           minReplicas: 2
         {{- with .Values.nodeSelector }}
-        nodeSelector: {{ toYaml . | nindent 10 }}
+        nodeSelector: 
+          {{ toYaml . | nindent 10 }}
         {{- end }}
     ingressGateways:
     - name: istio-ingressgateway
@@ -25,7 +26,8 @@ spec:
           hpaSpec:
             minReplicas: 2
           {{- with .Values.nodeSelector }}
-          nodeSelector: {{ toYaml . | nindent 12 }}
+          nodeSelector: 
+            {{ toYaml . | nindent 12 }}
           {{- end }}
           service:
             type: LoadBalancer
@@ -37,7 +39,8 @@ spec:
             {{- end }}
             externalTrafficPolicy: {{ .Values.istioOperator.service.externalTrafficPolicy }}
           {{- with .Values.istioOperator.serviceAnnotations }}
-          serviceAnnotations: {{ toYaml . | nindent 12 }}
+          serviceAnnotations: 
+            {{ toYaml . | nindent 12 }}
           {{- end }}
     egressGateways:
     - name: istio-egressgateway
