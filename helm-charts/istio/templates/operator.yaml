@@ -11,9 +11,9 @@ spec:
     pilot:
       k8s:
         enabled: true
-        hpaSpec:
-          minReplicas: 1
-          maxReplicas: 3
+        # hpaSpec:
+        #   minReplicas: 1
+        #   maxReplicas: 3
         {{- with .Values.nodeSelector }}
         nodeSelector: {{ toYaml . | nindent 10 }}
         {{- end }}
@@ -25,9 +25,9 @@ spec:
           istio: istio-ingressgateway
           service.istio.io/canonical-name: istio-ingressgateway
         k8s:
-          hpaSpec:
-            minReplicas: {{ .Values.istioOperator.hpaSpec.minReplicas }}
-            maxReplicas: {{ .Values.istioOperator.hpaSpec.maxReplicas }}
+        #   hpaSpec:
+        #     minReplicas: {{ .Values.istioOperator.hpaSpec.minReplicas }}
+        #     maxReplicas: {{ .Values.istioOperator.hpaSpec.maxReplicas }}
           {{- with .Values.nodeSelector }}
           nodeSelector: {{ toYaml . | nindent 12 }}
           {{- end }}
@@ -51,9 +51,9 @@ spec:
           istio: istio-egressgateway
           service.istio.io/canonical-name: istio-egressgateway
         k8s:
-          hpaSpec:  
-            minReplicas: {{ .Values.istioOperator.hpaSpec.minReplicas }}
-            maxReplicas: {{ .Values.istioOperator.hpaSpec.maxReplicas }}
+        #   hpaSpec:  
+        #     minReplicas: {{ .Values.istioOperator.hpaSpec.minReplicas }}
+        #     maxReplicas: {{ .Values.istioOperator.hpaSpec.maxReplicas }}
           {{- with .Values.nodeSelector }}
           nodeSelector: {{ toYaml . | nindent 12 }}
           {{- end }}
