@@ -1,73 +1,105 @@
+# apiVersion: install.istio.io/v1alpha1
+# kind: IstioOperator
+# metadata:
+#   name: istiocontrolplane
+#   namespace: istio-system
+# spec:
+#   profile: {{ .Values.istioOperator.profile }}
+#   meshConfig:
+#     accessLogFile: /dev/stdout
+#   components:
+#     pilot:
+#       k8s:
+#         enabled: true
+#         # hpaSpec:
+#         #   minReplicas: 1
+#         #   maxReplicas: 3
+#         {{- with .Values.nodeSelector }}
+#         nodeSelector: {{ toYaml . | nindent 10 }}
+#         {{- end }}
+#     ingressGateways:
+#       - name: istio-ingressgateway
+#         namespace: istio-system
+#         enabled: true
+#         label:
+#           istio: istio-ingressgateway
+#           service.istio.io/canonical-name: istio-ingressgateway
+#         k8s:
+#         #   hpaSpec:
+#         #     minReplicas: {{ .Values.istioOperator.hpaSpec.minReplicas }}
+#         #     maxReplicas: {{ .Values.istioOperator.hpaSpec.maxReplicas }}
+#           {{- with .Values.nodeSelector }}
+#           nodeSelector: {{ toYaml . | nindent 12 }}
+#           {{- end }}
+#           service:
+#             type: LoadBalancer
+#             ports:
+#             {{- range .Values.istioOperator.servicePorts }}
+#             - name: {{ .name }}
+#               port: {{ .port }}
+#               targetPort: {{ .targetPort }}
+#             {{- end }}
+#             externalTrafficPolicy: {{ .Values.istioOperator.service.externalTrafficPolicy }}
+#           {{- with .Values.istioOperator.serviceAnnotations }}
+#           serviceAnnotations: {{ toYaml . | nindent 12 }}
+#           {{- end }}
+#     egressGateways:
+#       - name: istio-egressgateway
+#         namespace: istio-system
+#         enabled: true
+#         label:
+#           istio: istio-egressgateway
+#           service.istio.io/canonical-name: istio-egressgateway
+#         k8s:
+#         #   hpaSpec:  
+#         #     minReplicas: {{ .Values.istioOperator.hpaSpec.minReplicas }}
+#         #     maxReplicas: {{ .Values.istioOperator.hpaSpec.maxReplicas }}
+#           {{- with .Values.nodeSelector }}
+#           nodeSelector: {{ toYaml . | nindent 12 }}
+#           {{- end }}
+#   values:
+#     sidecarInjectorWebhook:
+#       rewriteAppHTTPProbe: true
+#     gateways:
+#       istio-ingressgateway:
+#         type: ClusterIP
+#     global:
+#       {{- with .Values.nodeSelector }}
+#       defaultNodeSelector: {{ toYaml . | nindent 8 }}
+#       {{- end }}
+#   unvalidatedValues:
+#     {{- with .Values.nodeSelector }}
+#     nodeSelector: {{ toYaml . | nindent 6 }}
+#     {{- end }}
 apiVersion: install.istio.io/v1alpha1
 kind: IstioOperator
 metadata:
-  name: istiocontrolplane
   namespace: istio-system
+  name: istiocontrolplane
 spec:
-  profile: {{ .Values.istioOperator.profile }}
-  meshConfig:
-    accessLogFile: /dev/stdout
+  profile: default
   components:
-    pilot:
-      k8s:
-        enabled: true
-        # hpaSpec:
-        #   minReplicas: 1
-        #   maxReplicas: 3
-        {{- with .Values.nodeSelector }}
-        nodeSelector: {{ toYaml . | nindent 10 }}
-        {{- end }}
-    ingressGateways:
-      - name: istio-ingressgateway
-        namespace: istio-system
-        enabled: true
-        label:
-          istio: istio-ingressgateway
-          service.istio.io/canonical-name: istio-ingressgateway
-        k8s:
-        #   hpaSpec:
-        #     minReplicas: {{ .Values.istioOperator.hpaSpec.minReplicas }}
-        #     maxReplicas: {{ .Values.istioOperator.hpaSpec.maxReplicas }}
-          {{- with .Values.nodeSelector }}
-          nodeSelector: {{ toYaml . | nindent 12 }}
-          {{- end }}
-          service:
-            type: LoadBalancer
-            ports:
-            {{- range .Values.istioOperator.servicePorts }}
-            - name: {{ .name }}
-              port: {{ .port }}
-              targetPort: {{ .targetPort }}
-            {{- end }}
-            externalTrafficPolicy: {{ .Values.istioOperator.service.externalTrafficPolicy }}
-          {{- with .Values.istioOperator.serviceAnnotations }}
-          serviceAnnotations: {{ toYaml . | nindent 12 }}
-          {{- end }}
     egressGateways:
-      - name: istio-egressgateway
-        namespace: istio-system
-        enabled: true
-        label:
-          istio: istio-egressgateway
-          service.istio.io/canonical-name: istio-egressgateway
-        k8s:
-        #   hpaSpec:  
-        #     minReplicas: {{ .Values.istioOperator.hpaSpec.minReplicas }}
-        #     maxReplicas: {{ .Values.istioOperator.hpaSpec.maxReplicas }}
-          {{- with .Values.nodeSelector }}
-          nodeSelector: {{ toYaml . | nindent 12 }}
-          {{- end }}
-  values:
-    sidecarInjectorWebhook:
-      rewriteAppHTTPProbe: true
-    gateways:
-      istio-ingressgateway:
-        type: ClusterIP
-    global:
-      {{- with .Values.nodeSelector }}
-      defaultNodeSelector: {{ toYaml . | nindent 8 }}
-      {{- end }}
-  unvalidatedValues:
-    {{- with .Values.nodeSelector }}
-    nodeSelector: {{ toYaml . | nindent 6 }}
-    {{- end }}
+    - name: istio-egressgateway
+      enabled: true
+      k8s:
+        hpaSpec:
+          minReplicas: 2
+    ingressGateways:
+    - name: istio-ingressgateway
+      enabled: true
+      k8s:
+        hpaSpec:
+          minReplicas: 2
+    pilot:
+      enabled: true
+      k8s:
+        hpaSpec:
+          minReplicas: 2
+  meshConfig:
+    enableTracing: true
+    defaultConfig:
+      holdApplicationUntilProxyStarts: true
+    accessLogFile: /dev/stdout
+    outboundTrafficPolicy:
+      mode: REGISTRY_ONLY
