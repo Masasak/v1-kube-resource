@@ -12,36 +12,33 @@ spec:
         hpaSpec:
           minReplicas: 2
         {{- with .Values.nodeSelector }}
-        nodeSelector: 
-          {{ toYaml . | nindent 10 }}
+        nodeSelector: {{ toYaml . | nindent 10 }}
         {{- end }}
     ingressGateways:
     - name: istio-ingressgateway
-        namespace: istio-system
-        enabled: true
-        label:
-          istio: istio-ingressgateway
-          service.istio.io/canonical-name: istio-ingressgateway
-        k8s:
-          hpaSpec:
-            minReplicas: 2
-          {{- with .Values.nodeSelector }}
-          nodeSelector: 
-            {{ toYaml . | nindent 12 }}
+      namespace: istio-system
+      enabled: true
+      label:
+        istio: istio-ingressgateway
+        service.istio.io/canonical-name: istio-ingressgateway
+      k8s:
+        hpaSpec:
+          minReplicas: 2
+        {{- with .Values.nodeSelector }}
+        nodeSelector: {{ toYaml . | nindent 12 }}
+        {{- end }}
+        service:
+          type: LoadBalancer
+          ports:
+          {{- range .Values.istioOperator.servicePorts }}
+          - name: {{ .name }}
+            port: {{ .port }}
+            targetPort: {{ .targetPort }}
           {{- end }}
-          service:
-            type: LoadBalancer
-            ports:
-            {{- range .Values.istioOperator.servicePorts }}
-            - name: {{ .name }}
-              port: {{ .port }}
-              targetPort: {{ .targetPort }}
-            {{- end }}
-            externalTrafficPolicy: {{ .Values.istioOperator.service.externalTrafficPolicy }}
-          {{- with .Values.istioOperator.serviceAnnotations }}
-          serviceAnnotations: 
-            {{ toYaml . | nindent 12 }}
-          {{- end }}
+          externalTrafficPolicy: {{ .Values.istioOperator.service.externalTrafficPolicy }}
+        {{- with .Values.istioOperator.serviceAnnotations }}
+        serviceAnnotations: {{ toYaml . | nindent 12 }}
+        {{- end }}
     egressGateways:
     - name: istio-egressgateway
       enabled: true
