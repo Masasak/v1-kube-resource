@@ -1,6 +1,6 @@
 apiVersion: v2
 type: application
 name: istio
-version: 0.1.13
+version: 0.1.14
 appVersion: "1.18.1"
 description: SnapVibe Istio Operator

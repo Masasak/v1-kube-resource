@@ -97,9 +97,4 @@ spec:
         hpaSpec:
           minReplicas: 2
   meshConfig:
-    enableTracing: true
-    defaultConfig:
-      holdApplicationUntilProxyStarts: true
     accessLogFile: /dev/stdout
-    outboundTrafficPolicy:
-      mode: REGISTRY_ONLY
