@@ -3,8 +3,8 @@ istioOperator:
   service:
     externalTrafficPolicy: Local
   hpaSpec:
-    minReplicas: 2
-    maxReplicas: 10
+    minReplicas: 1
+    maxReplicas: 2
   serviceType: LoadBalancer 
   servicePorts:
     - name: http

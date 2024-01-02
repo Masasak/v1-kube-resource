@@ -10,7 +10,7 @@ spec:
       enabled: true
       k8s:
         hpaSpec:
-          minReplicas: 2
+          minReplicas: 1
         {{- with .Values.nodeSelector }}
         nodeSelector: {{ toYaml . | nindent 10 }}
         {{- end }}
@@ -23,7 +23,7 @@ spec:
         service.istio.io/canonical-name: istio-ingressgateway
       k8s:
         hpaSpec:
-          minReplicas: 2
+          minReplicas: 1
         {{- with .Values.nodeSelector }}
         nodeSelector: {{ toYaml . | nindent 12 }}
         {{- end }}
@@ -44,7 +44,7 @@ spec:
       enabled: true
       k8s:
         hpaSpec:
-          minReplicas: 2
+          minReplicas: 1
   meshConfig:
     enableTracing: true
     defaultConfig:
