@@ -1,0 +1,34 @@
+{{- range .Values.egressGateway }}
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: {{ .name }}
+  namespace: istio-system
+spec:
+  hosts:
+  - {{ .host }}
+  location: MESH_EXTERNAL
+  ports:
+  - number: {{ .port }}
+    name: {{ .name }}-{{ .protocol }}
+    protocol: {{ .protocol }}
+  resolution: DNS 
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ .name }}
+  namespace: istio-system
+spec:
+  hosts:
+  - {{ .host }}
+  gateways:
+  - istio-egressgateway
+  http:
+  - route:
+    - destination:
+        host: {{ .host }}
+        port:
+          number: {{ .port }}
+---
+{{- end }}
