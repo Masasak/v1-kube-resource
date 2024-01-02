@@ -2,5 +2,9 @@ apiVersion: v2
 type: application
 name: istio
 version: 0.1.15
-appVersion: "1.18.1"
+appVersion: "1.19.5"
 description: SnapVibe Istio Operator
+dependencies:
+  - name: istio-operator
+    version: 1.19.5
+    repository: https://istio-release.storage.googleapis.com/charts
